@@ -9,7 +9,10 @@ namespace stock_purchase
     {
       Dictionary<string, string> stocks = new Dictionary<string, string>();
       stocks.Add("GM", "General Motors");
+      stocks.Add("AAPL", "Apple Computers");
       stocks.Add("CAT", "Caterpillar");
+      stocks.Add("MSFT", "Microsoft, Incorporated");
+      stocks.Add("TWTR", "Twitter");
 
 
       var aapl = new KeyValuePair<string, List<double>>("AAPL", new List<double>() {
@@ -37,8 +40,7 @@ namespace stock_purchase
       {
         double moneyInvested = 0;  // init to 0
         stock.Value.ForEach(purchase => moneyInvested += purchase);
-
-        Console.WriteLine($"{stock.Key}: ${moneyInvested}");
+        Console.WriteLine($"{stocks[stock.Key]}: ${moneyInvested}");
 
       });
 
